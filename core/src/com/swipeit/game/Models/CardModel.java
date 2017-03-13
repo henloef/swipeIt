@@ -5,13 +5,17 @@ package com.swipeit.game.Models;
  */
 
 public class CardModel {
+    private Direction direction;
 
-    //
-    private enum Direction{
-        LEFT, RIGTH, UP, DOWN
+    public Direction getDirection() {
+        return direction;
     }
+
+    public CardModel(Direction direction){
+        this.direction = direction;
+    }
+    //
+
     private int value;
     private String suit;
-    private boolean isDone;
-
 }
