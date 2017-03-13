@@ -5,4 +5,5 @@ package com.swipeit.game.Activities;
  */
 
 public class MainActivity {
+
 }
