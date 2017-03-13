@@ -18,27 +18,27 @@ public class GameModel {
         createCards();
     }
 
+    //Makes card for each direction
+    private void createCards(){
+        cards = new ArrayList<CardModel>();
+        for(Direction dir : Direction.values()){
+            cards.add(new CardModel(dir));
+        }
+    }
+
+    //compares direction from user with card-direction. if same, return true and go to next card
     public boolean checkDirection(Direction playerDirection){
         Direction cardDirection = currentCard.getDirection();
-        if(cardDirection == playerDirection) return true;
+        if(cardDirection == playerDirection){
+            nextCard();
+            return true;
+        }
         else return false;
     }
 
-
-    //Makes card for each direction
-    private void createCards(){
-        //TODO Make stack from input
-        cards = new ArrayList<CardModel>();
-        cards.add(new CardModel(Direction.UP));
-        cards.add(new CardModel(Direction.DOWN));
-        cards.add(new CardModel(Direction.LEFT));
-        cards.add(new CardModel(Direction.RIGHT));
-    }
-
-
+    //sets current card to a new, random card
     private void nextCard(){
         Random r = new Random();
-        currentCard = cards.get(r.nextInt(4));
+        currentCard = cards.get(r.nextInt(Direction.values().length));
     }
-
 }
