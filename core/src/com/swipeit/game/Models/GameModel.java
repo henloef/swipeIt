@@ -9,15 +9,23 @@ import java.util.Random;
 
 public class GameModel {
 
-    public ArrayList<CardModel> cards;
+    private ArrayList<CardModel> cards;
     private CardModel currentCard;
-
+    private ArrayList<PlayerModel> players;
 
     //Constructor
     public GameModel(){
         createCards();
+        players = new ArrayList<PlayerModel>();
+        PlayerModel player = new PlayerModel();
+
     }
 
+    public void createPlayers(int amount){
+        for(int i = 0; i < amount; i++){
+            players.add(new PlayerModel());
+        }
+    }
     //Makes card for each direction
     private void createCards(){
         cards = new ArrayList<CardModel>();
@@ -40,5 +48,8 @@ public class GameModel {
     private void nextCard(){
         Random r = new Random();
         currentCard = cards.get(r.nextInt(Direction.values().length));
+    }
+    public ArrayList<PlayerModel> getPlayers() {
+        return players;
     }
 }

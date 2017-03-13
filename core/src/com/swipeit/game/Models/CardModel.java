@@ -16,6 +16,8 @@ public class CardModel {
     }
     //
 
+    /*
     private int value;
     private String suit;
+    */
 }
