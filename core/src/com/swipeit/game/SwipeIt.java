@@ -12,7 +12,7 @@ public class SwipeIt extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
 	CardModel card;
-	
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();

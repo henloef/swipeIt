@@ -20,9 +20,16 @@ public class CardModel extends Sprite{
     }
 
     public CardModel(Direction direction){
-        this.pil = new Texture("pil.gif");
-        setTexture(pil);
+        try {
+            this.pil = new Texture("pil.gif");
+            setTexture(pil);
+        }catch(NullPointerException e){
+            System.out.println("Error creating texture");
+        }
         this.direction = direction;
+
+    }
+    private void setTexture(){
 
     }
 
