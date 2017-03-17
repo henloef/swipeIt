@@ -13,11 +13,13 @@ public class SwipeIt extends ApplicationAdapter {
 	Texture img;
 	public static final float w = Gdx.graphics.getWidth();
 	public static final float h = Gdx.graphics.getHeight();
-	
+	CardModel card;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
+		card = new CardModel(Direction.RIGHT);
 	}
 
 	@Override
@@ -25,7 +27,8 @@ public class SwipeIt extends ApplicationAdapter {
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
-		//batch.draw(img, 0, 0);
+		batch.draw(img, 0, 0);
+		batch.draw(card.getTexture(), 500, 500); //TODO Fix turning arrow
 		batch.end();
 	}
 	
