@@ -11,6 +11,8 @@ import com.swipeit.game.Models.Direction;
 public class SwipeIt extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
+	public static final float w = Gdx.graphics.getWidth();
+	public static final float h = Gdx.graphics.getHeight();
 	CardModel card;
 
 	@Override

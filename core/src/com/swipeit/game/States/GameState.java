@@ -1,5 +1,7 @@
 package com.swipeit.game.States;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 /**
@@ -9,8 +11,11 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 public abstract class GameState {
     private Texture background;
 
+    OrthographicCamera cam = new OrthographicCamera();
+
     public GameState(){
         background = new Texture("bg.png");
     }
+
     //TODO Implement logic
 }

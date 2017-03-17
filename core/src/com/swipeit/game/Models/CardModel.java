@@ -27,6 +27,19 @@ public class CardModel extends Sprite{
             System.out.println("Error creating texture");
         }
         this.direction = direction;
+        scaleDirection(direction);
+
+    }
+
+    // Scales the texture according to the direction
+    private void scaleDirection(Direction direction){
+        if(direction == Direction.LEFT){
+            this.setScale(-1, 1);
+        }else if (direction == Direction.DOWN){
+            this.rotate90(true);
+        }else if (direction == Direction.UP){
+            this.rotate90(false);
+        }
 
     }
     private void setTexture(){
