@@ -34,7 +34,7 @@ public class GameModel {
     private void createCards(){
         cards = new ArrayList<CardModel>();
         for(Direction dir : Direction.values()){
-            cards.add(new CardModel(new Texture("pil.gif"),dir));
+            cards.add(new CardModel(dir));
         }
     }
 
