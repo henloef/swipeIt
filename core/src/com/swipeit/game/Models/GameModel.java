@@ -1,7 +1,11 @@
 package com.swipeit.game.Models;
 
+import com.badlogic.gdx.graphics.Texture;
+
 import java.util.ArrayList;
 import java.util.Random;
+
+import static com.badlogic.gdx.Input.Keys.R;
 
 /**
  * Created by Lars on 10.03.2017.
@@ -30,7 +34,7 @@ public class GameModel {
     private void createCards(){
         cards = new ArrayList<CardModel>();
         for(Direction dir : Direction.values()){
-            cards.add(new CardModel(dir));
+            cards.add(new CardModel(new Texture("pil.gif"),dir));
         }
     }
 
