@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "395356300707-l0k3bdl6u0tudh3rvf2921a4cq8auv1k.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.swipeit.game",
-            "certificate_hash": "02f6cc327aadd936b6391bb7a93c2de9a66ac03f"
-          }
-        },
-        {
           "client_id": "395356300707-dknbm909tmcuhqg3k4sbso01t0oj52tp.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "395356300707-dknbm909tmcuhqg3k4sbso01t0oj52tp.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

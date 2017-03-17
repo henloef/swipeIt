@@ -3,6 +3,7 @@ package com.swipeit.game.Models;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
+
 /**
  * Created by Lars on 10.03.2017.
  */
@@ -14,8 +15,9 @@ public class CardModel extends Sprite{
         return direction;
     }
 
-    public CardModel(Texture texture, Direction direction){
-        this.setTexture(texture);
+    public CardModel(Direction direction){
+
+        setTexture(new Texture("pil.gif"));
         this.direction = direction;
         scaleDirection(direction);
 
