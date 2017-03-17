@@ -9,10 +9,10 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 
 public class CardModel extends Sprite{
     private Direction direction;
-    private Texture pil;
+    private Texture arrowTexture;
 
     public Texture getTexture() {
-        return pil;
+        return arrowTexture;
     }
 
     public Direction getDirection() {
@@ -21,8 +21,8 @@ public class CardModel extends Sprite{
 
     public CardModel(Direction direction){
         try {
-            this.pil = new Texture("pil.gif");
-            setTexture(pil);
+            this.arrowTexture = new Texture("pil.gif");
+            setTexture(arrowTexture);
         }catch(NullPointerException e){
             System.out.println("Error creating texture");
         }
