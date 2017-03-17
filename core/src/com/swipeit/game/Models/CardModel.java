@@ -9,10 +9,10 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 
 public class CardModel extends Sprite{
     private Direction direction;
-    private Texture pil;
+    private Texture arrowTexture;
 
     public Texture getTexture() {
-        return pil;
+        return arrowTexture;
     }
 
     public Direction getDirection() {
@@ -20,8 +20,14 @@ public class CardModel extends Sprite{
     }
 
     public CardModel(Direction direction){
-        this.pil = new Texture("pil.gif");
-        setTexture(pil);
+
+        //Try-catch to be able to test without instanitating game
+        try {
+            this.arrowTexture = new Texture("pil.gif");
+            setTexture(arrowTexture);
+        }catch(NullPointerException e){
+            System.out.println("Error creating texture");
+        }
         this.direction = direction;
         scaleDirection(direction);
 
@@ -36,6 +42,9 @@ public class CardModel extends Sprite{
         }else if (direction == Direction.UP){
             this.rotate90(false);
         }
+
+    }
+    private void setTexture(){
 
     }
 
