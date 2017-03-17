@@ -9,17 +9,23 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 
 public class CardModel extends Sprite{
     private Direction direction;
+    private Texture pil;
+
+    public Texture getTexture() {
+        return pil;
+    }
 
     public Direction getDirection() {
         return direction;
     }
 
     public CardModel(Direction direction){
-        Texture pil = new Texture("pil.gif");
+        this.pil = new Texture("pil.gif");
         setTexture(pil);
         this.direction = direction;
 
     }
+
 
 
     //
