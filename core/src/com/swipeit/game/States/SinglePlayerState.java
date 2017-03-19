@@ -18,13 +18,11 @@ public class SinglePlayerState extends GameState {
     }
 
     //Gets gamemodel from boardController
-    public void setGameModel(){
-        this.gameModel = boardController.getGameModel();
-    }
+
 
     @Override
     public void startGame() {
-     //   gameModel.startGame();
+     boardControllers.get(0).startGame();
     }
 
 

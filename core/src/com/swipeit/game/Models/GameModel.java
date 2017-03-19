@@ -15,13 +15,19 @@ public class GameModel {
 
     private ArrayList<CardModel> cards;
     private CardModel currentCard;
+    private PlayerModel player;
 
     //Constructor
     public GameModel(){
         createCards();
-        PlayerModel player = new PlayerModel();
-
+        player = new PlayerModel();
     }
+
+    //gets true if still time left
+    public boolean timeLeft(){
+        return player.timeLeft();
+    }
+
 
     //Makes card for each direction
     private void createCards(){
@@ -42,9 +48,8 @@ public class GameModel {
     }
 
     //sets current card to a new, random card
-    private void nextCard(){
+    public void nextCard(){
         Random r = new Random();
         currentCard = cards.get(r.nextInt(Direction.values().length));
     }
-
 }

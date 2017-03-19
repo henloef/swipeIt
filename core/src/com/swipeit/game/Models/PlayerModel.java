@@ -39,5 +39,7 @@ public class PlayerModel {
         }
     }
 
-
+    public boolean timeLeft(){
+        return currentTime > 0;
+    }
 }
