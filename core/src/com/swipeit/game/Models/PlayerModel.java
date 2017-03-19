@@ -17,6 +17,7 @@ public class PlayerModel {
     }
     public void addTime(int t){
         currentTime += t;
+        if(currentTime > maxTime) currentTime = maxTime;
     }
 
     public int getMaxTime() {
