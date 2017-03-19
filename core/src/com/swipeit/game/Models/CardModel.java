@@ -21,7 +21,7 @@ public class CardModel extends Sprite{
 
     public CardModel(Direction direction){
 
-        //Try-catch to be able to test without instanitating game
+        //Try-catch to be able to test without instantiating game
         try {
             this.arrowTexture = new Texture("pil.gif");
             setTexture(arrowTexture);

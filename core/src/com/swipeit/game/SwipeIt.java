@@ -1,6 +1,7 @@
 package com.swipeit.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -8,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.swipeit.game.Models.CardModel;
 import com.swipeit.game.Models.Direction;
 
-public class SwipeIt extends ApplicationAdapter {
+public class SwipeIt extends Game {
 	SpriteBatch batch;
 	Texture img;
 	public static int WIDTH;
@@ -32,6 +33,10 @@ public class SwipeIt extends ApplicationAdapter {
 		batch.draw(img, 0, 0);
 		batch.draw(card.getTexture(), 500, 500); //TODO Fix turning arrow
 		batch.end();
+
+		//Hans legger inn
+		super.render(); // calls the render method of the screen(state)
+
 	}
 	
 	@Override
