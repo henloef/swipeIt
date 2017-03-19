@@ -21,7 +21,11 @@ public class GameModel {
     public GameModel(){
         createCards();
         player = new PlayerModel();
+    }
 
+    //gets true if still time left
+    public boolean timeLeft(){
+        return player.timeLeft();
     }
 
 
@@ -44,7 +48,7 @@ public class GameModel {
     }
 
     //sets current card to a new, random card
-    private void nextCard(){
+    public void nextCard(){
         Random r = new Random();
         currentCard = cards.get(r.nextInt(Direction.values().length));
     }
