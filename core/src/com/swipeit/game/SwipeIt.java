@@ -11,12 +11,14 @@ import com.swipeit.game.Models.Direction;
 public class SwipeIt extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
-	public static final float w = Gdx.graphics.getWidth();
-	public static final float h = Gdx.graphics.getHeight();
+	public static int WIDTH;
+	public static int HEIGHT;
 	CardModel card;
 
 	@Override
 	public void create () {
+		WIDTH = Gdx.graphics.getWidth();
+		HEIGHT = Gdx.graphics.getHeight();
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
 		card = new CardModel(Direction.RIGHT);
