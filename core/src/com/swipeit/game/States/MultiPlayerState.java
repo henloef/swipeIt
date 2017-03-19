@@ -13,19 +13,17 @@ import java.util.ArrayList;
 public class MultiPlayerState extends GameState {
 
     private int gameKey;
-    private ArrayList<GameModel> gameModels;
     private ServerCommunicator serverCommunicator;
 
     public MultiPlayerState(BoardController boardController){
         super(boardController);
-        gameModels = new ArrayList<GameModel>();
         getGameKey();
     }
 
     //ServerCommunactor gives an opponent
-    public void setOpponentPlayer(int key, GameModel opponentGameModel){
+    public void setOpponentPlayer(int key, BoardController opponentBoardController){
         if( key == gameKey){
-            gameModels.add(opponentGameModel);
+            boardControllers.add(opponentBoardController);
         }
     }
 
@@ -34,7 +32,7 @@ public class MultiPlayerState extends GameState {
     /*Ask server for opponent
     private void getOpponentPlayer(){
         if(serverCommunicator.requestGameKey == gameKey){
-            gameModels.add(serverCommunicator.requestGameModel);
+            boardControllers.add(serverCommunicator.requestBoardController);
         }
     }*/
 
@@ -45,18 +43,9 @@ public class MultiPlayerState extends GameState {
     }
 
     public void startGame(){
-        for(GameModel gameModel: gameModels){
-           // gameModel.startGame();
+        for(BoardController boardController: boardControllers){
+           // boardController.startGame();
         }
     }
 
-    //gets gameModel from BoardController
-    @Override
-    public void setGameModel() {
-        setGameModel(boardController.getGameModel());
-    }
-
-    private void setGameModel(GameModel gameModel){
-        gameModels.add(gameModel);
-    }
 }
