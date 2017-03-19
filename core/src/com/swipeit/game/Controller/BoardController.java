@@ -11,14 +11,16 @@ import com.swipeit.game.States.SinglePlayerState;
 
 public class BoardController {
     private GameState gameState;
-    private GameModel gameModel;
     public BoardController(Boolean isMultiPlayer){
         createGameState(isMultiPlayer);
-        gameModel = new GameModel();
     }
 
     private void createGameState(Boolean isMultiPlayer) {
-        if (isMultiPlayer) gameState = new MultiPlayerState();
-        else gameState = new SinglePlayerState();
+        if (isMultiPlayer) gameState = new MultiPlayerState(this);
+        else gameState = new SinglePlayerState(this);
+    }
+
+    public GameModel getGameModel(){
+        return new GameModel();
     }
 }

@@ -5,4 +5,9 @@ package com.swipeit.game.Controller;
  */
 
 public class ServerCommunicator {
+
+    public int getGameKey(){
+        //TODO implement server connection
+        return 0;
+    }
 }
