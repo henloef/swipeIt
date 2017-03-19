@@ -52,4 +52,12 @@ public class GameModel {
         Random r = new Random();
         currentCard = cards.get(r.nextInt(Direction.values().length));
     }
+
+    public CardModel getCurrentCard(){
+        return currentCard;
+    }
+
+    public ArrayList<CardModel> getCards(){
+        return cards;
+    }
 }
