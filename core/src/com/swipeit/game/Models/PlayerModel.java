@@ -10,6 +10,7 @@ public class PlayerModel {
 
     public void timeTick() {
         currentTime--;
+
     }
 
     private void addTime(){
@@ -17,6 +18,7 @@ public class PlayerModel {
     }
     public void addTime(int t){
         currentTime += t;
+        if(currentTime > maxTime) currentTime = maxTime;
     }
 
     public int getMaxTime() {
@@ -28,6 +30,14 @@ public class PlayerModel {
     }
 
     public void setCurrentTime(int currentTime) {
-        this.currentTime = currentTime;
+        if (currentTime > 100){
+            this.currentTime = 100;
+        } else if (currentTime < 0){
+            this.currentTime = 0;
+        } else{
+            this.currentTime = currentTime;
+        }
     }
+
+
 }
