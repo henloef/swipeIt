@@ -14,17 +14,15 @@ import java.util.ArrayList;
  */
 
 public abstract class GameState {
-    protected ArrayList<BoardController> boardControllers;
+    protected BoardController boardController;
 
 
     //OrthographicCamera cam = new OrthographicCamera();
 
     public GameState(BoardController boardController){
-        boardControllers = new ArrayList<BoardController>();
-        boardControllers.add(boardController);
+        this.boardController=boardController;
     }
 
 
     public abstract void startGame();
-    //TODO Implement logic
 }

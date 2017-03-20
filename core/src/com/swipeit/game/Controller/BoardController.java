@@ -1,5 +1,6 @@
 package com.swipeit.game.Controller;
 
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.swipeit.game.Models.Direction;
 import com.swipeit.game.Models.GameModel;
@@ -14,17 +15,18 @@ import com.swipeit.game.States.SinglePlayerState;
 public class BoardController extends ClickListener{
     private GameModel gameModel;
     private GameState gameState;
-    private boolean isMultiplayer;
+    private boolean isMultiPlayer;
 
-    public BoardController(Boolean isMultiPlayer){
-        this.isMultiplayer = isMultiPlayer;
-        createGameState(isMultiPlayer);
+    public BoardController(){
 
     }
 
-    private void createGameState(Boolean isMultiPlayer) {
-        if (isMultiPlayer) gameState = new MultiPlayerState(this);
-        else gameState = new SinglePlayerState(this);
+    private void createGameState(Boolean isMultiPlayer, Boolean generateKey) {
+        if (isMultiPlayer){ gameState = new MultiPlayerState(this, generateKey);
+            this.isMultiPlayer = isMultiPlayer;
+        // Få fra input om man venter på motstander eller generer gamekey
+        }
+        else{ gameState = new SinglePlayerState(this);}
     }
 
     public GameModel getGameModel(){
@@ -33,6 +35,11 @@ public class BoardController extends ClickListener{
 
     public void createGameModel(){
         new GameModel();
+    }
+
+    public int getInputGameKey(){
+        //Get input from screen
+        return 0;
     }
 
     public void startGame(){
@@ -53,9 +60,9 @@ public class BoardController extends ClickListener{
         //tryDirection()
     }
 
-    private Direction decideDirection(int startX,int endX,int startY,int endY){
-        int deltaX = endX - startX;
-        int deltaY = endY - startY;
+    private Direction decideDirection(Vector2 start, Vector2 end){
+        float deltaX = end.x - start.x;
+        float deltaY = end.y - start.y;
         if(Math.abs(deltaX) > Math.abs(deltaY)){
             if(deltaX > 0){
                 return Direction.RIGHT;

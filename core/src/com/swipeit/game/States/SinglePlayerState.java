@@ -22,7 +22,7 @@ public class SinglePlayerState extends GameState {
 
     @Override
     public void startGame() {
-     boardControllers.get(0).startGame();
+     boardController.startGame();
     }
 
 
