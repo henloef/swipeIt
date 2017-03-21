@@ -8,7 +8,6 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.0'
         classpath 'com.google.gms:google-services:3.0.0'
-
     }
 }
 
@@ -57,7 +56,7 @@ project(":android") {
         //Add firebase
         compile "com.google.firebase:firebase-core:$firebaseVersion"
         compile "com.google.firebase:firebase-database:$firebaseVersion"
-        compile fileTree(dir: '../libs', include: '*.jar')
+
     }
 }
 
@@ -72,15 +71,6 @@ project(":core") {
 
         testCompile "junit:junit:4.12"
         testCompile "org.mockito:mockito-core:2.7.17"
-        
-        //Add firebase
-        //compile "com.google.firebase:firebase-core:$firebaseVersion"
-        //compile "com.google.firebase:firebase-database:$firebaseVersion"
-
-        compile fileTree(dir: '../libs', include: '*.jar')
-
-
-
     }
 }
 
