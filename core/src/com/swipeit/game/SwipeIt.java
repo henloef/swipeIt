@@ -26,6 +26,7 @@ public class SwipeIt extends ApplicationAdapter {
 		card = new CardModel(Direction.RIGHT);
 		sc.connectSocket();
         sc.configSocketEvents();
+		card = new CardModel(Direction.RIGHT); //Temporary
 	}
 
 	@Override
