@@ -21,7 +21,7 @@ public class SwipeIt extends ApplicationAdapter {
 		HEIGHT = Gdx.graphics.getHeight();
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
-		card = new CardModel(Direction.RIGHT);
+		card = new CardModel(Direction.RIGHT); //Temporary
 	}
 
 	@Override
