@@ -1,4 +1,4 @@
-# swipeIt
+# swipeIt [depricated]
 Project implementation TDT4240
 
 ## Find Keystore for firebase windows
