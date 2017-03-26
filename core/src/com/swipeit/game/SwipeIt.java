@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.swipeit.game.Controller.ServerCommunicator;
 import com.swipeit.game.Models.CardModel;
 import com.swipeit.game.Models.Direction;
 
@@ -14,6 +15,7 @@ public class SwipeIt extends ApplicationAdapter {
 	public static int WIDTH;
 	public static int HEIGHT;
 	CardModel card;
+	ServerCommunicator sc = new ServerCommunicator();
 
 	@Override
 	public void create () {
@@ -22,6 +24,8 @@ public class SwipeIt extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
 		card = new CardModel(Direction.RIGHT);
+		sc.connectSocket();
+        sc.configSocketEvents();
 	}
 
 	@Override
